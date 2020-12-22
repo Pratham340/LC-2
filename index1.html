@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Let's Chat</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="LetsChat.css">
+<script src="LetsChat.js"></script>
+  <style>
+    
+    /* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+   
+    .row.content {
+        height: 580px
+    }
+    
+   
+    .sidenav {
+      background-color: grey;
+      height: 200%;
+    }
+    
+ 
+    footer {
+      background-color: grey;
+      color: white;
+      padding: 15px;
+      margin-top:5px;
+    }
+    
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+        <center><kbd>Let's Chat</kbd>
+            <hr>
+            <img src="unnamed.jpg" width="350px" height="500px">
+            <h1>Let's Chat</h1>
+            <label id="l1">Chatting Through Creating Rooms</label>
+            <label>Visit Website: prathampujari.whjr.site</label>
+            <label>Thank You For Using Let's Chat</label>
+        </center>
+      </div>
+    </div>
+   <center>
+        <div class="form-group">
+            <div style="position:fixed; left:800px; top:0px;" id="d1">
+                <h1 class="header">	
+                    Let's Chat	<sup>
+                <img src="m2.png">
+                </sup>
+            </h1>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-11 login_div">
+                <img src="unnamed.jpg" class="logo">
+                    <h3></h3>
+                    <h4></h4>
+                <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+              </div>
+            </div>
+          <br><br>
+            </div>
+            <div id="id01" class="modal">
+  
+                <form class="modal-content animate" action="LetsChat_room.html">
+                  <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <img src="unnamed.jpg" alt="Avatar" class="avatar">
+                  </div>
+              
+                  <div class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input id="txt1"type="text" placeholder="Enter Username" name="uname" required>
+              
+                    <label for="psw"><b>Password</b></label>
+                    <input id="psw1"type="password" placeholder="Enter Password" name="psw" required>
+                      
+                    <button type="submit" onclick="addUser()">Login</button>
+                    <label>
+                      <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                  </div>
+              
+                  <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    <span class="psw">Forgot <a href="#">password?</a></span>
+                  </div>
+                </form>
+              </div>
+              
+              <script>
+              // Get the modal
+              var modal = document.getElementById('id01');
+              
+              // When the user clicks anywhere outside of the modal, close it
+              window.onclick = function(event) {
+                  if (event.target == modal) {
+                      modal.style.display = "none";
+                  }
+              }
+              </script>
+              
+            </center>
+          </div>
+<center><footer class="container-fluid">
+    <p>Pratham@Whjr-Pune,Maharastra,India 411057 Main Ph.No.-8983094693 Secondary Ph.No.-8983690693</p>
+    <p>Contact Us-<a href="mailto:pulse1608@gmail.com?Subject=Hi">pulse1608@gmail.com</a>
+        <br>
+    <a href="https://docs.google.com/document/d/e/2PACX-1vQRMv5M2lwqXa66e9-kckgrav9nvW2s0HLUbK4XWq5ke9ur9Sf2Dwj5hJSeKrUjexDINb2WpIbOf7Fr/pub"><b>Privacy Policy</b></a>
+    <br>
+    <a href="https://prathampujari.whjr.site"><b>Visit My Website</b></a>
+  </footer></center>
+</body>
+</html
